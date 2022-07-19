@@ -12,8 +12,8 @@ class noteDao {
         notes.value = noteList
     }
 
-    fun addNote(quote: Note) {
-        noteList.add(quote)
+    fun addNote(note: Note) {
+        noteList.add(note)
         notes.value = noteList
     }
 

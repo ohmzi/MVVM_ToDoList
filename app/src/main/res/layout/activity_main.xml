@@ -7,7 +7,7 @@
     tools:context="com.ui.notes.MainActivity">
 
     <TextView
-        android:id="@+id/textView_quotes"
+        android:id="@+id/textView_notes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -26,7 +26,7 @@
         tools:text="Notes:" />
 
     <EditText
-        android:id="@+id/editText_quote"
+        android:id="@+id/editText_note"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -38,13 +38,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_quotes"
+        app:layout_constraintTop_toBottomOf="@+id/textView_notes"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintWidth_percent="0.7" />
 
 
     <Button
-        android:id="@+id/button_add_quote"
+        android:id="@+id/button_add_note"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -53,11 +53,11 @@
         android:backgroundTint="?colorAccent"
         android:text="Add"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_quote"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_note"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editText_quote"
-        app:layout_constraintTop_toTopOf="@+id/editText_quote"
+        app:layout_constraintStart_toEndOf="@+id/editText_note"
+        app:layout_constraintTop_toTopOf="@+id/editText_note"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintWidth_percent="0.25" />
 

@@ -15,27 +15,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView_quotes.movementMethod = ScrollingMovementMethod()
+        textView_notes.movementMethod = ScrollingMovementMethod()
         initializeUi()
     }
 
     private fun initializeUi() {
         val factory = InjectorUtils.viewModelProvider()
         val viewModel = ViewModelProviders.of(this, factory)
-            .get(QuotesViewModel::class.java)
+            .get(notesViewModel::class.java)
 
         viewModel.getNodes().observe(this, Observer { notes ->
             val stringBuilder = StringBuilder()
             notes.forEach { notes ->
                 stringBuilder.append("$notes\n\n")
             }
-            textView_quotes.text = stringBuilder.toString()
+            textView_notes.text = stringBuilder.toString()
         })
 
-        button_add_quote.setOnClickListener {
-            val notes = Note(editText_quote.text.toString())
+        button_add_note.setOnClickListener {
+            val notes = Note(editText_note.text.toString())
             viewModel.addNote(notes)
-            editText_quote.setText("")
+            editText_note.setText("")
         }
     }
 }

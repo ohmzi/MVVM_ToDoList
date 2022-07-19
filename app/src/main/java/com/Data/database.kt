@@ -3,7 +3,7 @@ package com.Data
 
 class database private constructor() {
 
-    var quoteDao = noteDao()
+    var noteDao = noteDao()
         private set
 
     companion object {

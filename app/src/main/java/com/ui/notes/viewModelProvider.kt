@@ -10,6 +10,6 @@ class viewModelProvider(private val repository: repository) :
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return QuotesViewModel(repository) as T
+        return notesViewModel(repository) as T
     }
 }

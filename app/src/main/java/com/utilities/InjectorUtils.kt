@@ -7,7 +7,7 @@ import com.ui.notes.viewModelProvider
 object InjectorUtils {
 
     fun viewModelProvider(): viewModelProvider {
-        val noteRepository = repository.getInstance(database.getInstance().quoteDao)
+        val noteRepository = repository.getInstance(database.getInstance().noteDao)
         return viewModelProvider(noteRepository)
     }
 }
