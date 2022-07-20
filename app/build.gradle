@@ -5,6 +5,9 @@
 
 android {
     compileSdk 32
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId "com.example.MVVM_ToDoList"
@@ -33,7 +36,6 @@ android {
 
 dependencies {
     apply plugin: 'kotlin-android'
-    apply plugin: 'kotlin-android-extensions'
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'

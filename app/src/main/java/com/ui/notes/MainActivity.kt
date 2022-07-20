@@ -6,16 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.Data.Note
-import com.example.MVVM_ToDoList.R
+import com.example.MVVM_ToDoList.databinding.ActivityMainBinding
 import com.utilities.InjectorUtils
-import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        textView_notes.movementMethod = ScrollingMovementMethod()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        binding.textViewNotes.movementMethod = ScrollingMovementMethod()
+        setContentView(view)
         initializeUi()
     }
 
@@ -29,13 +33,13 @@ class MainActivity : AppCompatActivity() {
             notes.forEach { notes ->
                 stringBuilder.append("$notes\n\n")
             }
-            textView_notes.text = stringBuilder.toString()
+            binding.textViewNotes.text = stringBuilder.toString()
         })
 
-        button_add_note.setOnClickListener {
-            val notes = Note(editText_note.text.toString())
+        binding.buttonAddNote.setOnClickListener {
+            val notes = Note(binding.editTextNote.text.toString())
             viewModel.addNote(notes)
-            editText_note.setText("")
+            binding.editTextNote.setText("")
         }
     }
 }
